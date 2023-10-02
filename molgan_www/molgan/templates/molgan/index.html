@@ -1,0 +1,20 @@
+{% extends 'molgan/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="glitch is-glitching" data-text="MolGAN">MolGAN</h1>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <p class="predict-desc">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <form action="" class="Search" method="post">
+            {% csrf_token %}
+            <input class="Search-box" id="Search-box" autocomplete="off" placeholder="Smiles" value="{{ smiles }}" name="smiles">
+            <label class="Search-label" for="Search-box"><i class="fa fa-search"></i></label>
+            <button class="predict-button" type="submit">Predict</button>
+            <a href="{% url 'generate_smiles' %}" class="btn-1"><span>Generate</span></a>
+        </form>
+    </div>
+{% endblock %}

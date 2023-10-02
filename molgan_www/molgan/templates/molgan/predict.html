@@ -1,0 +1,26 @@
+{% extends 'molgan/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="glitch is-glitching" data-text="MolGAN">MolGAN</h1>
+    <div class="container">
+        <p class="predict-desc">Predict for smiles <br> {{ smiles }}</p>
+        <table class="table_container">
+            <thead>
+                <tr>
+                    <th><h1>Disease</h1></th>
+                    <th><h1>Probability</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for disease in disease_table %}
+                <tr>
+                    <td>{{ disease.name }}</td>
+                    <td>{{ disease.prediction|floatformat:10 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'index' %} " class="back-button">Back</a>
+    </div>
+{% endblock %}
