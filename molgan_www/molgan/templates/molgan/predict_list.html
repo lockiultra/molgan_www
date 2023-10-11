@@ -1,0 +1,15 @@
+{% extends 'molgan/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="glitch is-glitching" data-text="MolGAN">MolGAN</h1>
+    <div class="container">
+        <form action="" method="POST" class="upload_smiles">
+            {% csrf_token %}
+            <input type="file" name="smiles" id="smiles" required>
+            <p>Drag your file here or click in this area.</p>
+            <a href="{% url 'index' %} " class="back-button">Back</a>
+            <button type="submit" class="predict-button">Upload</button>
+          </form>
+    </div>
+{% endblock %}

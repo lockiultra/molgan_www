@@ -166,6 +166,7 @@ html, body {
   
   .Search-box {
     flex: 1 0 auto;
+    width: 355px;
     margin: 0 12px;
     padding: 8px 20px;
     height: 50px;
@@ -218,7 +219,7 @@ html, body {
   .btn-1{    
       position: absolute;
       top: 80px;
-      left: 80px;
+      left: 10px;
       border-radius: 50px;
       color: #fff;
       padding: 12px 42px;
@@ -251,6 +252,44 @@ html, body {
       top: 13px;
       transition: 2s ease-in;
   }
+
+  .btn-2{    
+    position: absolute;
+    top: 80px;
+    left: 180px;
+    border-radius: 50px;
+    color: #fff;
+    padding: 12px 42px;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    border: 2px solid #fff;
+    text-decoration: none;
+    transition: 0.2s;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+.btn-2 span:after{
+    position: absolute;
+    left: 50px;
+    top: 45px;
+    content: 'Done';
+    color: transparent;
+    transition: 0s;
+}
+.btn-2:focus span{
+    color: transparent;
+}
+.btn-2:focus{
+    box-shadow: inset 4em 0 0 #e00,
+                inset -4em 0 0 #e00;
+    transition: 1s;
+}
+.btn-2:focus span:after{
+    color: #fff;
+    top: 13px;
+    transition: 2s ease-in;
+}
   
   .predict-button {
       border-radius: 50px;
@@ -416,4 +455,29 @@ transition-timing-function: line;
     62%{
       transform: translate(-22px,5px) skew(21deg); 
     }
+  }
+
+  /* Upload form */
+
+  .upload_smiles{
+    width: 500px;
+    height: 200px;
+    border: 4px dashed #fff;
+  }
+  .upload_smiles p{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 170px;
+    color: #ffffff;
+    font-family: Arial;
+  }
+  .upload_smiles input{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
   }

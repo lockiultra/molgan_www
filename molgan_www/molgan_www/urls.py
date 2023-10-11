@@ -24,9 +24,9 @@ urlpatterns = [
     path('', include('molgan.urls')),
 ]
 
-urlpatterns += [
-        re_path(f'^{settings.STATIC_URL.lstrip("/")}(?P<path>.*)$',
-            serve, {'document_root': settings.STATIC_ROOT}),
-    ]
+# urlpatterns += [
+#         re_path(f'^{settings.STATIC_URL.lstrip("/")}(?P<path>.*)$',
+#             serve, {'document_root': settings.STATIC_ROOT}),
+#     ]
 
 handler404 = 'molgan.views.handler404'
